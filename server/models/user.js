@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       validate: {
         validator(v) {
-          return /^sdsd/.test(v);
+          return /^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$/.test(v);
         },
         message: () => BAD_PHONE_NUMBER,
       },
