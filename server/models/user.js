@@ -22,6 +22,10 @@ const userSchema = new mongoose.Schema(
       minlength: 2,
       maxlength: 50,
     },
+    cookie: {
+      type: Boolean,
+      default: false, // если пользователь принял куки тогда можно проводить аунтефикацию через них если нет использовать локально хранилище
+    },
     number: {  // номер телефона не обязательно
       type: String,
       validate: {
