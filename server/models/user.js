@@ -5,24 +5,24 @@ const { BAD_EMAIL_MESSAGE, ERROR_401_BAD_REQ_MESSAGE, BAD_PHONE_NUMBER } = requi
 
 const userSchema = new mongoose.Schema(
   {
-    name: {
+    firstName: {
       type: String,
       minlength: 2,
       maxlength: 30,
       required: true,
     },
-    surname: { // фамилия Нужно только для физ лиц и ИП но будет солиднее с ней
+    lastName: { // фамилия нужно только для физ лиц и ИП но будет солиднее с ней
       type: String,
       minlength: 2,
       maxlength: 50,
       required: true,
     },
-    middleName: { // фамилия не обязательно нужно для физ лиц и ИП
+    middleName: { // отчество не обязательно нужно для физ лиц и ИП
       type: String,
       minlength: 2,
       maxlength: 50,
     },
-    number: {
+    number: {  // номер телефона не обязательно
       type: String,
       validate: {
         validator(v) {

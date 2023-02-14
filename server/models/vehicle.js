@@ -3,7 +3,7 @@ const { BAD_GOS_NUMBER } = require('../Utils/constants');
 
 const vehicleShema = mongoose.Schema(
   {
-    type: {
+    cat: { // категория
       type: String,
       minlength: 5,
       maxlength: 50,
@@ -27,12 +27,12 @@ const vehicleShema = mongoose.Schema(
       ref: 'user',
       require: true,
     },
-    company: {
+    company: { // Владелец ТС для договоров
       tupe: String,
       require: true,
       maxlength: 50,
       minlength: 1,
-    }
+    },
   },
   {
     versionKey: false,
