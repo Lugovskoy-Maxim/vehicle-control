@@ -28,11 +28,16 @@ const vehicleShema = mongoose.Schema(
       require: true,
     },
     company: { // Владелец ТС для договоров
-      tupe: String,
+      type: String,
       require: true,
       maxlength: 50,
       minlength: 1,
     },
+    contracts: {
+      type: String,
+      maxlength: 50,
+      minlength: 1,
+    }
   },
   {
     versionKey: false,

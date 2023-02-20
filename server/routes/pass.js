@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const {
-  validatePassId
-} = require('../middlewares/validation');
+// const {
+//   validatePassId
+// } = require('../middlewares/validation');
 
 const {
   findPass,
@@ -11,8 +11,8 @@ const {
 } = require('../controllers/users');
 
 router.get('/pass/', findPass);
-router.get('/pass/:id', validatePassId, findPassById);
-router.patch('/pass/:id', validatePassId, updatePass);
-router.delete('/pass/:id', validatePassId, removePass);
+router.get('/pass/:id', findPassById);
+router.patch('/pass/:id', updatePass);
+router.delete('/pass/:id', removePass);
 
 module.exports = router;

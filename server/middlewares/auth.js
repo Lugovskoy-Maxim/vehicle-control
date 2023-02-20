@@ -1,5 +1,5 @@
 const { verify } = require('jsonwebtoken');
-const AuthError = require('../errors/AuthError'); // ошибка 404
+const { AuthError } = require('../errors/index'); // ошибка 404
 
 const { JWT_SECRET, NODE_ENV } =  process.env;
 const { JWT_DEV, ERROR_401_MESSAGE } = require('../Utils/constants');

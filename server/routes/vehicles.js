@@ -1,7 +1,4 @@
 const router = require('express').Router();
-const {
-  // validateVehicleId
-} = require('../middlewares/validation');
 
 const {
   findMeVehicle,
@@ -9,12 +6,13 @@ const {
   updateVehicle,
   getAllVehicle,
   removeVehicle,
-} = require('../controllers/users');
+} = require('../controllers/vehicles');
 
+router.patch('/vehicle/add', addVehicle);
 router.get('/vehicle/me', findMeVehicle);
 router.get('/vehicle/all', getAllVehicle); // нужно защитить от обычных пользователей
-router.get('/users/:id', validateVehicleId, findVehicleById);
-router.patch('/vehicle/:id', validateVehicleId, updateVehicle);
-router.delete('/vehicle/:id', validateVehicleId, removeVehicle);
+router.get('/users/:id', findVehicleById);
+router.patch('/vehicle/:id', updateVehicle);
+router.delete('/vehicle/:id', removeVehicle);
 
 module.exports = router;
