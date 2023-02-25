@@ -93,10 +93,25 @@ module.exports.findUserbyId = (req, res, next) => {
 };
 
 module.exports.updateUser = (req, res, next) => {
-  const { name, email } = req.body;
+  const {
+    name,
+    email,
+    firstName,
+    lastName,
+    middleName,
+    number,
+    rights,
+    cookieAccept } = req.body;
   User.findByIdAndUpdate(
     req.user._id,
-    { name, email },
+    { name,
+      email,
+      firstName,
+      lastName,
+      middleName,
+      number,
+      rights,
+      cookieAccept },
     { new: true, runValidators: true },
   )
     .then((user) => res.send({ user }))
