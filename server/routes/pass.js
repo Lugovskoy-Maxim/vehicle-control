@@ -4,13 +4,15 @@ const router = require('express').Router();
 // } = require('../middlewares/validation');
 
 const {
-  findPass,
+  addPass,
+  getAllPass,
   findPassById,
   updatePass,
   removePass,
-} = require('../controllers/users');
+} = require('../controllers/pass');
 
-router.get('/pass/', findPass);
+router.patch('/pass/', addPass);
+router.get('/pass/', getAllPass);
 router.get('/pass/:id', findPassById);
 router.patch('/pass/:id', updatePass);
 router.delete('/pass/:id', removePass);

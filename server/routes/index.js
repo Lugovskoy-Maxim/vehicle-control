@@ -4,7 +4,10 @@ const user = require('./users');
 const vehicles = require('./vehicles');
 const pass = require('./pass');
 const { ERROR_404_PAGE_MESSAGE } = require('../utils/constants')
-
+const {
+  login,
+  registrations,
+} = require('../controllers/users');
 
 router.use('/signin', login);
 router.use('/signup', registrations);

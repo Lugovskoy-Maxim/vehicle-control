@@ -21,12 +21,18 @@ const { JWT_SECRET, NODE_ENV } = process.env;
 
 module.exports.registrations = (req, res, next) => {
   const {
-    email, password,
+    email, password, firstName, lastName, middleName, number, rights, cookieAccept
   } = req.body;
   bcrypt // хеширую пароль чтобы хранить его в зашифрованном виде
     .hash(password, 10)
     .then((hash) => User.create({
       email,
+      firstName,
+      lastName,
+      middleName,
+      number,
+      rights,
+      cookieAccept,
       password: hash,
     }))
     .then((user) => res.status(201).send({ message: SUCCESSFUL_REGISTATION_MESSAGE,

@@ -5,7 +5,7 @@ const { JWT_SECRET, NODE_ENV } =  process.env;
 const { JWT_DEV, ERROR_401_MESSAGE } = require('../Utils/constants');
 
 const auth = (req, res, next) => {
-  const token = req.cookies.authToken ? req.cookies.authToken : res.authToken ;
+  const token = req.cookies.authToken ? req.cookies.authToken : req.body.authToken ;
   // если не пришло куки проверить в запросе токен
   // сделал что бы реализовать хранение токена в localSotage если пользователь не приймет использование куки
   if (!token) {
