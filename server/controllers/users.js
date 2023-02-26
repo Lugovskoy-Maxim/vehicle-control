@@ -21,7 +21,7 @@ const { JWT_SECRET, NODE_ENV } = process.env;
 
 module.exports.registrations = (req, res, next) => {
   const {
-    email, password, firstName, lastName, middleName, number, rights, cookieAccept
+    email, password, firstName, lastName, middleName, number, cookieAccept
   } = req.body;
   bcrypt // хеширую пароль чтобы хранить его в зашифрованном виде
     .hash(password, 10)
@@ -31,7 +31,6 @@ module.exports.registrations = (req, res, next) => {
       lastName,
       middleName,
       number,
-      rights,
       cookieAccept,
       password: hash,
     }))
@@ -100,7 +99,6 @@ module.exports.updateUser = (req, res, next) => {
     lastName,
     middleName,
     number,
-    rights,
     cookieAccept } = req.body;
   User.findByIdAndUpdate(
     req.user._id,
@@ -110,8 +108,30 @@ module.exports.updateUser = (req, res, next) => {
       lastName,
       middleName,
       number,
-      rights,
       cookieAccept },
+    { new: true, runValidators: true },
+  )
+    .then((user) => res.send({ user }))
+    .catch((err) => {
+      if (err.name === 'CastError' || err.name === 'ValidationError') {
+        next(new BadRequestError(ERROR_400_MESSAGE));
+        return;
+      }
+      if (err.name === 'MongoServerError' && err.code === 11000) {
+        next(new ConflictError(ERROR_409_EMAIL_MESSAGE));
+        return;
+      }
+      next(err);
+    });
+};
+
+
+module.exports.updateRightsUser = (req, res, next) => {
+  const {
+  rights } = req.body;
+  User.findByIdAndUpdate(
+    req.user._id,
+    { rights },
     { new: true, runValidators: true },
   )
     .then((user) => res.send({ user }))
