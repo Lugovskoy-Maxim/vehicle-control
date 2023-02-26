@@ -126,12 +126,12 @@ module.exports.updateUser = (req, res, next) => {
 };
 
 
-module.exports.updateRightsUser = (req, res, next) => {
+module.exports.updateRoleUser = (req, res, next) => {
   const {
-  rights } = req.body;
+  role } = req.body;
   User.findByIdAndUpdate(
     req.user._id,
-    { rights },
+    { role },
     { new: true, runValidators: true },
   )
     .then((user) => res.send({ user }))

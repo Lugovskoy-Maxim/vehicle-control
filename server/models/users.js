@@ -51,9 +51,10 @@ const userSchema = new mongoose.Schema(
       required: true,
       select: false,
     },
-    rights: {
+    role: {
       type: String,
       default: 'user', // для выдачи прав админа
+      enum: ['user', 'admin'],
     }
   },
   {

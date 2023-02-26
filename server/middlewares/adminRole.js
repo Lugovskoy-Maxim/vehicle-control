@@ -2,13 +2,11 @@ const { ForbiddenError } = require('../errors/index'); // ошибка 404
 const {  NOT_ENOUGH_RIGHTS } = require('../Utils/constants');
 const User = require('../models/users');
 
-const adminRights = (req, res, next) => {
-  console.log(req.user)
-  let localUserRights;
+const adminRole = (req, res, next) => {
+  let localUserRole;
   User.findById(req.user._id)
-  .then((user) => { localUserRights = user.rights
-    console.log(localUserRights);
-    if (localUserRights === 'user'){
+  .then((user) => { localUserRole = user.role
+    if (localUserRole === 'user'){
       throw new ForbiddenError(NOT_ENOUGH_RIGHTS);
     } else {
       return next();
@@ -19,4 +17,4 @@ const adminRights = (req, res, next) => {
 // пропускаем запрос дальше
 };
 
-module.exports = adminRights;
+module.exports = adminRole;
