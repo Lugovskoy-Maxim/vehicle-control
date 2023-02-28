@@ -28,5 +28,5 @@ app.use(indexRouter);
 app.use(celebrate.errors()); // обработчик ошибок валидации ссылок и почты из middleware/validation, пока не включал
 
 app.listen(PORT, () => {
-  console.log(`Приложение запущщено. Активный порт: ${PORT}`);
+  console.log(`Приложение успешно запущено! Активный порт: ${PORT}`);
 });
