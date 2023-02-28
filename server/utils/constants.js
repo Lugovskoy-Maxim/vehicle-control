@@ -4,6 +4,7 @@ const JWT_DEV = 'JWT_DEV';
 
 // SEND ERROR MESSAGE
 const ERROR_400_MESSAGE = 'Плохой запрос! Проверте правильность введеных данных и повторите снова!';
+const BAD_IMAGE_URL_MESSAGE = 'Изоброжение должно быть в формате jpg|gif|png ';
   // user
 const NOT_ENOUGH_RIGHTS = 'Недостатоно прав для выполнения запроса! Обратитесь к администратору!';
 const BAD_EMAIL_MESSAGE = 'Неверный адрес почты';
@@ -21,6 +22,7 @@ const ERROR_409_REG_NUM_MESSAGE = 'Транспортное средство с 
 
 // SUCCESSFUL
 const SUCCESSFUL_REGISTATION_MESSAGE = 'Вы успешно зарегистрированы!';
+const SUCCESSFUL_ADD_VEHICLE_MESSAGE = 'Техника успешно добавлена!'
 
 // RATE LIMITER
 const LIMIT_REQUEST = 100; // количество запросов на сервер
@@ -30,6 +32,7 @@ module.exports = {
   LIMIT_REQUEST,
   LIMIT_TIME_REQUEST,
   NOT_ENOUGH_RIGHTS,
+  BAD_IMAGE_URL_MESSAGE,
   BAD_GOS_NUMBER,
   BAD_EMAIL_MESSAGE,
   ERROR_400_MESSAGE,

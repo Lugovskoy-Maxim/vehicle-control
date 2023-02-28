@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const AuthError = require('../errors/auth');
-const { BAD_EMAIL_MESSAGE, ERROR_401_BAD_REQ_MESSAGE, BAD_PHONE_NUMBER } = require('../Utils/constants');
+const { BAD_EMAIL_MESSAGE, ERROR_401_BAD_REQ_MESSAGE, BAD_PHONE_NUMBER, BAD_IMAGE_URL_MESSAGE } = require('../Utils/constants');
 
 const userSchema = new mongoose.Schema(
   {
@@ -50,6 +50,15 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
       select: false,
+    },
+    avatar: {
+      type: String,
+      validate: {
+        validator(v) {
+          return /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/g.test(v);
+        },
+        message: () => BAD_IMAGE_URL_MESSAGE
+      }
     },
     role: {
       type: String,

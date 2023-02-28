@@ -3,17 +3,10 @@ const { BAD_GOS_NUMBER } = require('../Utils/constants');
 
 const vehicleShema = mongoose.Schema(
   {
-    cat: { // категория
-      type: String,
-      minlength: 5,
-      maxlength: 50,
-      required: true,
-      unique: true,
-    },
     regNumber: {
       type: String,
-      minlength: 8, // O 999 OO 189
-      maxlength: 9,
+      minlength: 6, // O 999 OO 189
+      maxlength: 12,
       unique: true,
       require: true,
       validate: {
@@ -21,7 +14,15 @@ const vehicleShema = mongoose.Schema(
           return /^[АВЕКМНОРСТУХ]\d{3}(?<!000)[АВЕКМНОРСТУХ]{2}\d{2,3}$/ui.test(v);
         },
         message: () => BAD_GOS_NUMBER,
-      }    },
+      }
+    },
+    category: { // категория
+      type: String,
+      enum: ['Грузовой самосвал', 'Легковой универсал', 'Легковой седан', 'Легковой прочее', 'Грузовой прочее', 'Топливозаправщик', 'Экскаватор', 'Кран', 'Бульдозер', 'Погрузчик', 'Грузовой тягач седельный'],
+      minlength: 5,
+      maxlength: 50,
+      required: true,
+    },
     owner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'user',

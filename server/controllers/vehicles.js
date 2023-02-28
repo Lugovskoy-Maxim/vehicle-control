@@ -1,8 +1,8 @@
 const Vehicle = require('../models/vehicles');
 const {
-  // NotFoundError,
-  // BadRequestError,
-  // ConflictError,
+  NotFoundError,
+  BadRequestError,
+  ConflictError,
 } = require('../errors/index');
 
 const {
@@ -10,10 +10,16 @@ const {
   ERROR_404_VEHICLE_MESSAGE,
   ERROR_404_VEHICLE_BAD_ID_MESSAGE,
   ERROR_409_REG_NUM_MESSAGE,
+  SUCCESSFUL_ADD_VEHICLE_MESSAGE,
 } = require('../Utils/constants');
 
 module.exports.addVehicle = (req, res, next) => {
+  const { category, regNumber, company, contracts } = req.body
   Vehicle.create({
+    regNumber,
+    category,
+    company,
+    contracts
   })
   .then((vehicle) => res.status(201).send({ message: SUCCESSFUL_ADD_VEHICLE_MESSAGE, vehicle: vehicle }))
   .catch((err) => {
@@ -22,6 +28,7 @@ module.exports.addVehicle = (req, res, next) => {
       return;
     }
     if (err.name === 'MongoServerError' && err.code === 11000) {
+      console.log(err);
       next(new ConflictError(ERROR_409_REG_NUM_MESSAGE));
       return;
     }
