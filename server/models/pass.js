@@ -7,14 +7,14 @@ const passSchema = new mongoose.Schema(
       required: true,
     },
     vehicles: {
-      type: Object,
+      type: Array,
       required: true,
     },
     from: {
-      type: Date,
+      type: String,
     },
     to: {
-      type: Date,
+      type: String,
     },
     update: {
       type: Date,

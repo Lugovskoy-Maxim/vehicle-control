@@ -21,16 +21,21 @@ const ERROR_404_VEHICLE_MESSAGE = 'Техника не найдена, попр�
 const ERROR_404_VEHICLE_BAD_ID_MESSAGE = 'Неверный id техники, проверте введенную информацию';
 const ERROR_409_REG_NUM_MESSAGE = 'Транспортное средство с таким номером уже существует!';
 
+// PASS
+const ERROR_404_PASS_MESSAGE = 'Объект не найден!';
+const ERROR_404_PASS_BAD_ID_MESSAGE = 'Неверно указан ID'
+
 // SUCCESSFUL
 const SUCCESSFUL_REGISTATION_MESSAGE = 'Вы успешно зарегистрированы!';
 const SUCCESSFUL_ADD_VEHICLE_MESSAGE = 'Техника успешно добавлена!';
-const REMOVE_SUCCESSFULLY_MESSAGE = 'Техника успешно удалена!';
+const REMOVE_SUCCESSFULLY_MESSAGE = 'Запрос на вудаление выполнен успешно!';
 
 // RATE LIMITER
 const LIMIT_REQUEST = 100; // количество запросов на сервер
 const LIMIT_TIME_REQUEST = 900000; // (15 * 60 * 1000 = 900000 миллисекунд = 15 min) временной отрезок для запросов
 
 module.exports = {
+
   LIMIT_REQUEST,
   LIMIT_TIME_REQUEST,
   NOT_ENOUGH_RIGHTS,
@@ -42,6 +47,8 @@ module.exports = {
   ERROR_401_BAD_REQ_MESSAGE,
   ERROR_403_MESSAGE,
   ERROR_404_PAGE_MESSAGE,
+  ERROR_404_PASS_BAD_ID_MESSAGE,
+  ERROR_404_PASS_MESSAGE,
   ERROR_404_VEHICLE_MESSAGE,
   ERROR_404_VEHICLE_BAD_ID_MESSAGE,
   ERROR_404_USER_MESSAGE,

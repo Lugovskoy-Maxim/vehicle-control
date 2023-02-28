@@ -11,7 +11,7 @@ const {
   removePass,
 } = require('../controllers/pass');
 
-router.patch('/pass/', addPass);
+router.patch('/pass/add', addPass);
 router.get('/pass/', getAllPass);
 router.get('/pass/:id', findPassById);
 router.patch('/pass/:id', updatePass);
