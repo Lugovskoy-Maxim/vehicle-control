@@ -3,6 +3,7 @@ const {
   NotFoundError,
   BadRequestError,
   ConflictError,
+  ForbiddenError,
 } = require('../errors/index');
 
 const {
@@ -126,7 +127,7 @@ module.exports.removeVehicle = (req, res, next) => {
         return vehicle.remove()
           .then(() => res.send({ message: REMOVE_SUCCESSFULLY_MESSAGE }));
       }
-      throw new ForbiddenErrors(ERROR_403_MESSAGE);
+      throw new ForbiddenError(ERROR_403_MESSAGE);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
