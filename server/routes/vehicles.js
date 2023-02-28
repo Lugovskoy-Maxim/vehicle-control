@@ -12,7 +12,7 @@ const {
 router.patch('/vehicle/add', addVehicle);
 router.get('/vehicle/me', findMeVehicle);
 router.get('/vehicle/all', getAllVehicle); // нужно защитить от обычных пользователей
-router.get('/users/:id', findVehicleById);
+router.get('/vehicle/:id', findVehicleById);
 router.patch('/vehicle/:id', updateVehicle);
 router.delete('/vehicle/:id', removeVehicle);
 

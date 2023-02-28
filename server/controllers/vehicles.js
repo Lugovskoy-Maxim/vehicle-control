@@ -7,10 +7,12 @@ const {
 
 const {
   ERROR_400_MESSAGE,
+  ERROR_403_MESSAGE,
   ERROR_404_VEHICLE_MESSAGE,
   ERROR_404_VEHICLE_BAD_ID_MESSAGE,
   ERROR_409_REG_NUM_MESSAGE,
   SUCCESSFUL_ADD_VEHICLE_MESSAGE,
+  REMOVE_SUCCESSFULLY_MESSAGE,
 } = require('../Utils/constants');
 
 module.exports.addVehicle = (req, res, next) => {
@@ -38,6 +40,7 @@ module.exports.addVehicle = (req, res, next) => {
 }
 
 module.exports.findMeVehicle = (req, res, next) => {
+  console.log(req.user)
   Vehicle.find({ owner: req.user._id})
     .orFail(new NotFoundError(ERROR_404_VEHICLE_MESSAGE))
     .then((vehicle) => res.send(vehicle))
@@ -78,7 +81,7 @@ module.exports.findVehicleById = (req, res, next) => {
 
 module.exports.updateVehicle = (req, res, next) => {
   const { cat, regNumber, company, contracts } = req.body;
-  User.findByIdAndUpdate(
+  Vehicle.findByIdAndUpdate(
     req.params.id,
     { cat, regNumber, company, contracts },
     { new: true, runValidators: true },

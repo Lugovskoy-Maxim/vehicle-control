@@ -5,6 +5,7 @@ const JWT_DEV = 'JWT_DEV';
 // SEND ERROR MESSAGE
 const ERROR_400_MESSAGE = 'Плохой запрос! Проверте правильность введеных данных и повторите снова!';
 const BAD_IMAGE_URL_MESSAGE = 'Изоброжение должно быть в формате jpg|gif|png ';
+const ERROR_403_MESSAGE = 'Недостаточно прав!';
   // user
 const NOT_ENOUGH_RIGHTS = 'Недостатоно прав для выполнения запроса! Обратитесь к администратору!';
 const BAD_EMAIL_MESSAGE = 'Неверный адрес почты';
@@ -22,7 +23,8 @@ const ERROR_409_REG_NUM_MESSAGE = 'Транспортное средство с 
 
 // SUCCESSFUL
 const SUCCESSFUL_REGISTATION_MESSAGE = 'Вы успешно зарегистрированы!';
-const SUCCESSFUL_ADD_VEHICLE_MESSAGE = 'Техника успешно добавлена!'
+const SUCCESSFUL_ADD_VEHICLE_MESSAGE = 'Техника успешно добавлена!';
+const REMOVE_SUCCESSFULLY_MESSAGE = 'Техника успешно удалена!';
 
 // RATE LIMITER
 const LIMIT_REQUEST = 100; // количество запросов на сервер
@@ -38,6 +40,7 @@ module.exports = {
   ERROR_400_MESSAGE,
   ERROR_401_MESSAGE,
   ERROR_401_BAD_REQ_MESSAGE,
+  ERROR_403_MESSAGE,
   ERROR_404_PAGE_MESSAGE,
   ERROR_404_VEHICLE_MESSAGE,
   ERROR_404_VEHICLE_BAD_ID_MESSAGE,
@@ -45,6 +48,8 @@ module.exports = {
   ERROR_404_USER_BAD_ID_MESSAGE,
   ERROR_409_REG_NUM_MESSAGE,
   SUCCESSFUL_REGISTATION_MESSAGE,
+  REMOVE_SUCCESSFULLY_MESSAGE,
+  SUCCESSFUL_ADD_VEHICLE_MESSAGE,
   BAD_PHONE_NUMBER,
   MONGO_URL_DEV,
   JWT_DEV,
