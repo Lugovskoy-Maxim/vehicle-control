@@ -14,12 +14,13 @@ const {
 } = require('../Utils/constants');
 
 module.exports.addVehicle = (req, res, next) => {
-  const { category, regNumber, company, contracts } = req.body
+  const { cat, regNumber, company, contracts,  } = req.body
   Vehicle.create({
     regNumber,
-    category,
+    cat,
     company,
-    contracts
+    contracts,
+    owner: req.user._id,
   })
   .then((vehicle) => res.status(201).send({ message: SUCCESSFUL_ADD_VEHICLE_MESSAGE, vehicle: vehicle }))
   .catch((err) => {
