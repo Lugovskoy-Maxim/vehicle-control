@@ -1,32 +1,36 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const AuthError = require('../errors/AuthError');
-const { BAD_EMAIL_MESSAGE, ERROR_401_BAD_REQ_MESSAGE, BAD_PHONE_NUMBER } = require('../Utils/constants');
+const AuthError = require('../errors/auth');
+const { BAD_EMAIL_MESSAGE, ERROR_401_BAD_REQ_MESSAGE, BAD_PHONE_NUMBER, BAD_IMAGE_URL_MESSAGE } = require('../Utils/constants');
 
 const userSchema = new mongoose.Schema(
   {
-    name: {
+    firstName: {
       type: String,
       minlength: 2,
       maxlength: 30,
       required: true,
     },
-    surname: { // фамилия Нужно только для физ лиц и ИП но будет солиднее с ней
+    lastName: { // фамилия нужно только для физ лиц и ИП но будет солиднее с ней
       type: String,
       minlength: 2,
       maxlength: 50,
       required: true,
     },
-    middleName: { // фамилия не обязательно нужно для физ лиц и ИП
+    middleName: { // отчество не обязательно нужно для физ лиц и ИП
       type: String,
       minlength: 2,
       maxlength: 50,
     },
-    number: {
+    cookieAccept: {
+      type: Boolean,
+      default: false, // если пользователь принял куки тогда можно проводить аунтефикацию через них если нет использовать локально хранилище
+    },
+    number: {  // номер телефона не обязательно
       type: String,
       validate: {
         validator(v) {
-          return /^sdsd/.test(v);
+          return /^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$/.test(v);
         },
         message: () => BAD_PHONE_NUMBER,
       },
@@ -47,6 +51,20 @@ const userSchema = new mongoose.Schema(
       required: true,
       select: false,
     },
+    avatar: {
+      type: String,
+      validate: {
+        validator(v) {
+          return /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/g.test(v);
+        },
+        message: () => BAD_IMAGE_URL_MESSAGE
+      }
+    },
+    role: {
+      type: String,
+      default: 'user', // для выдачи прав админа
+      enum: ['user', 'admin'],
+    }
   },
   {
     versionKey: false,
