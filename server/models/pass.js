@@ -11,10 +11,15 @@ const passSchema = new mongoose.Schema(
       required: true,
     },
     from: {
-      type: String,
+      type: Date,
     },
     to: {
-      type: String,
+      type: Date,
+    },
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'user',
+      require: true,
     },
     update: {
       type: Date,

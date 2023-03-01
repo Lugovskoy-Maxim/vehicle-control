@@ -28,14 +28,13 @@ const ERROR_404_PASS_BAD_ID_MESSAGE = 'Неверно указан ID'
 // SUCCESSFUL
 const SUCCESSFUL_REGISTATION_MESSAGE = 'Вы успешно зарегистрированы!';
 const SUCCESSFUL_ADD_VEHICLE_MESSAGE = 'Техника успешно добавлена!';
-const REMOVE_SUCCESSFULLY_MESSAGE = 'Запрос на вудаление выполнен успешно!';
+const REMOVE_SUCCESSFULLY_MESSAGE = 'Запрос на удаление выполнен успешно!';
 
 // RATE LIMITER
 const LIMIT_REQUEST = 100; // количество запросов на сервер
 const LIMIT_TIME_REQUEST = 900000; // (15 * 60 * 1000 = 900000 миллисекунд = 15 min) временной отрезок для запросов
 
 module.exports = {
-
   LIMIT_REQUEST,
   LIMIT_TIME_REQUEST,
   NOT_ENOUGH_RIGHTS,

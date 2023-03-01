@@ -123,10 +123,6 @@ module.exports.removeVehicle = (req, res, next) => {
         return vehicle.remove()
           .then(() => res.send({ message: REMOVE_SUCCESSFULLY_MESSAGE }));
       }
-      if(req.user.rights === 'admin'){
-        return vehicle.remove()
-          .then(() => res.send({ message: REMOVE_SUCCESSFULLY_MESSAGE }));
-      }
       throw new ForbiddenError(ERROR_403_MESSAGE);
     })
     .catch((err) => {
