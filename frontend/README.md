@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+Многостраничный сайт на React.js с авторизацией, админкой, личным кабинетом, страницей новостей и возможностью добавления техники является полноценным и функциональным инструментом для пользователей, которые хотят получить все необходимые возможности для работы с ресурсом.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Страницы сайта:
 
-## Available Scripts
+1. Главная страница. Она содержит информацию о ресурсе, его целях, возможностях и предлагает пользователю авторизироваться или зарегистрироваться.
 
-In the project directory, you can run:
+2. Страница авторизации. Пользователь должен ввести свои данные (имя, пароль), чтобы получить доступ к личному кабинету и административной панели.
 
-### `npm start`
+3. Страница регистрации. Здесь пользователь вводит свои контактные данные.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. Личный кабинет. Он доступен только после авторизации, здесь пользователь может просмотреть свои данные, изменить их, просмотреть добавленную технику, её характеристики и допуски, увидеть результаты своих действий (например, сохранённые статьи, отправленые заявки).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5. Административная панель. Через неё пользователь, который имеет соответствующие права, может управлять сайтом: создавать или удалять пользователей, менять настройки ресурса, управлять доступом к контенту и другое.
 
-### `npm test`
+6. Страница новостей. Здесь пользователь может просмотреть последние новости и события ресурса.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+7. Страница добавления техники. Эта страница доступна только после прохождения авторизации и предназначена для создание записи о личной технике добавлению сканов  СТС и ПТС. Здесь пользователь может добавить описание техники, а также просмотреть уже существующие записи.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Полученный сайт на React является отличным инструментом для взаимодействия пользователя и ресурсом. Его функциональность и удобство позволяют сэкономить время и сделать работу более продуктивной.
