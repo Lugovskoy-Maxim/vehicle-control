@@ -21,7 +21,9 @@ function Header(){
           </li>
         </ul>
         <div className={styles.avatar}>
-          <img className={styles.avatarImage} src={avatar} alt="avatar" />
+          <button className={styles.editAvatar}>
+            <img className={styles.avatarImage} src={avatar} alt="avatar" />
+          </button>
         </div>
       </div>
     </header>
