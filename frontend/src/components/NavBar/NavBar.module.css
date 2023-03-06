@@ -3,3 +3,30 @@
   width: 200px;
   background-color: antiquewhite;
 }
+
+.groupName{
+  text-align: center;
+  padding: 0;
+  margin: 20px auto 15px ;
+}
+
+.elements{
+  list-style-type: none;
+  text-align: left;
+  padding: 0 0 0 30px;
+}
+
+.element{
+  cursor: pointer;
+}
+
+.link{
+  color: black;
+  text-decoration: none;
+}
+
+.linkMore{
+  color: black;
+  text-decoration: none;
+  padding-left: 10px;
+}

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import styles from './Header.module.css';
 import avatar from '../../images/avatar.JPG';
 
-function Header(){
+function Header() {
 
-  return(
+  return (
     <header className={styles.header}>
       <Link className={styles.link} to='/'>
         <p className={styles.name}>Vehicle</p>
