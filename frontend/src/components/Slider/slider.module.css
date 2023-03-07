@@ -1,0 +1,13 @@
+.group{
+  display: flex;
+}
+
+.image{
+  width: 160px;
+  height: 145px;
+}
+
+.info{
+  margin: 10px auto;
+  display: flex;
+}

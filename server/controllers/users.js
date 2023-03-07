@@ -100,8 +100,11 @@ module.exports.updateUser = (req, res, next) => {
     middleName,
     number,
     cookieAccept } = req.body;
+    const userId = req.user._id
+    console.log(typeof(userId));
+    console.log(userId);
   User.findByIdAndUpdate(
-    req.user._id,
+    userId,
     { name,
       email,
       firstName,
