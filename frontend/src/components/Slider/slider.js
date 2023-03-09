@@ -1,18 +1,31 @@
+import React, { useState } from 'react';
 import styles from './slider.module.css';
 
-export default function slider(newsArr, currentNews, setCurrentNews){
+function Slider(newsArr){
+  const [currentNews, setCurrentNews] = useState(0);
+  const element = newsArr[currentNews]
 
-  return (newsArr.map((element) =>
-  <div  key={element.title}>
-    <h1>{element.title}</h1>
+  function nextNews (){
+    currentNews >= (newsArr.length -1) ? setCurrentNews(0) : setCurrentNews(currentNews + 1)
+  }
+
+  setTimeout(() => {
+    nextNews()
+  }, 10000)
+
+  return (
+  <div className={styles.container} key={element.title}>
+    <h1 className={styles.title}>{element.title}</h1>
     <div className={styles.group}>
       <img className={styles.image} src={element.image} alt={element.title} />
-      <p>{element.text}</p>
+      <p className={styles.text}>{element.text}</p>
     </div>
     <div className={styles.info}>
-    <p>{element.owner}</p>
-      <p>{element.date}</p>
+      <p className={styles.owner}>{element.owner}</p>
+      <p className={styles.date}>{element.date}</p>
     </div>
   </div>
-  ))
+  )
 }
+
+export default Slider;

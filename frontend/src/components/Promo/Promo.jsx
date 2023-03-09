@@ -1,6 +1,6 @@
+import React from 'react';
 import styles from './Promo.module.css';
 import slider from '../Slider/slider'
-import { useState } from "react"
 
 
 //должен быть api но пока будет массив
@@ -20,7 +20,7 @@ const newsArr = [
     date: '2022-02-23',
   },  {
     title: 'Третья запись',
-    image: 'https://miro.medium.com/max/1200/1*HJIjx2B6H-uOM7CpxgoAuQ.jpeg',
+    image: 'https://angorki.ru/wp-content/uploads/2020/10/russell-scaled.jpg',
     text: 'Короткая запись',
     owner: 'Заяц Серенький',
     date: '2022-03-23',
@@ -28,10 +28,58 @@ const newsArr = [
 ]
 
 function Promo(){
-  const [currentNews, setCurrentNews] = useState(0);
   return(
     <div className={styles.promo}>
-      {slider(newsArr, currentNews, setCurrentNews)}
+      {slider(newsArr)}
+      <hr className={styles.line}></hr>
+      <div>
+        <ul className={styles.panels}>
+          <li className={styles.panel}>Просмотр объектов строительства
+          <hr />
+          В работе
+          <hr />
+          Завершено
+          <hr />
+          Запланированно
+          <hr />
+          </li>
+          <li className={styles.panel}>На текущий момент NaN техники готово к работе.
+          <hr />
+          NaN ожидают согласования пропуска
+          <hr />
+          NaN на стадии формирования
+          <hr />
+          проверить свои машины
+          </li>
+          <li className={styles.panel}>На текущий момент NaN техники готово к работе.
+          <hr />
+          NaN ожидают согласования пропуска
+          <hr />
+          NaN на стадии формирования
+          <hr />
+          проверить свои машины
+          </li>
+          <li className={styles.panel}>На текущий момент NaN техники готово к работе.
+          <hr />
+          NaN ожидают согласования пропуска
+          <hr />
+          NaN на стадии формирования
+          <hr />
+          проверить свои машины
+          </li>
+
+        </ul>
+      </div>
+      <hr className={styles.line}></hr>
+      <div>
+        <h2>Наши партнёры</h2>
+        <ul className={styles.partners}>
+          <li className={styles.partner}>{`ООО "Компания"`}</li>
+          <li className={styles.partner}>{`ООО "Компания"`}</li>          <li className={styles.partner}>{`ООО "Компания"`}</li>          <li className={styles.partner}>{`ООО "Компания"`}</li>          <li className={styles.partner}>{`ООО "Компания"`}</li>          <li className={styles.partner}>{`ООО "Компания"`}</li>          <li className={styles.partner}>{`ООО "Компания"`}</li>          <li className={styles.partner}>{`ООО "Компания"`}</li>          <li className={styles.partner}>{`ООО "Компания"`}</li>          <li className={styles.partner}>{`ООО "Компания"`}</li>          <li className={styles.partner}>{`ООО "Компания"`}</li>          <li className={styles.partner}>{`ООО "Компания"`}</li>
+        </ul>
+      </div>
+
+
     </div>
   )
 }

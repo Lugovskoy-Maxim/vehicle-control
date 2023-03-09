@@ -7,3 +7,48 @@
 .newGroup{
 
 }
+
+.line{
+  border: none;
+  border-bottom: 2px solid #a4a4a441;
+  margin: 10px;
+  box-shadow: none;
+}
+
+.partners{
+  justify-content: center;
+  margin: 10px;
+  align-items: center;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  gap: 10px 10px;
+  padding: 0;
+}
+
+.partner{
+  border-radius: 15px;
+  background-color:  aliceblue;
+  box-shadow: 1px 1px #aaaaaa7a;
+  height: 50px;
+  width: 150px;
+}
+
+.panels{
+  justify-content: center;
+  margin: 10px;
+  align-items: center;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, 450px);
+  gap: 10px 10px;
+  padding: 0;
+}
+
+.panel{
+  border-radius: 15px;
+  background-color:  aliceblue;
+  box-shadow: 1px 1px #aaaaaa7a;
+  height: 250px;
+  width: 450px;
+}
