@@ -1,5 +1,5 @@
-@import url(./vendor/css/normalize.css);
-@import url(./vendor/fonts/stylesheet.css);
+@import url(../../vendor/css/normalize.css);
+@import url(../../vendor/fonts/stylesheet.css);
 
 body {
   margin: 0;

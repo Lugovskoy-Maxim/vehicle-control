@@ -1,0 +1,141 @@
+.header {
+  margin: 0 auto 0;
+  padding: 0 20px 0;
+  position: relative;
+  background-color: #232121;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  min-width: 320px;
+  width: 90%;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+}
+
+.navigation {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+.linkItem {
+  padding: 0;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 18px;
+  letter-spacing: 0.1px;
+}
+
+.userBox{
+  margin: 20px 15px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  font-style: italic;
+  text-align: right;
+  color: #fff;
+}
+
+.userName {
+  margin: 0;
+  font-family: 'Yandex Sans Text';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: right;
+  letter-spacing: 0.1px;
+  color: #D3CACA;
+}
+
+.name {
+  margin: 0;
+  font-family: 'Yandex Sans Text';
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 100%;
+  text-align: left;
+}
+
+.slogan {
+  margin: 0;
+  color: rgb(255, 255, 255);
+  font-family: 'Yandex Sans Text';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  text-align: right;
+}
+
+.profile {
+  display: flex;
+}
+
+.logged{
+  padding: 0;
+  height: 40px;
+  width: 40px;
+  margin: 20px 15px;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.icon{
+  height: 40px;
+  width: 40px;
+}
+
+.iconBar {
+  display: flex;
+}
+
+.notification {
+  list-style-type: none;
+  margin: 0 10px 0;
+}
+
+.avatar {
+  margin: 5px 0 0 20px;
+}
+
+.editAvatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-image: url('../../images/edit-svgrepo-com.svg');
+  background-size: cover;
+  z-index: 3;
+}
+
+.avatarImage {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-size: contain;
+  object-fit: cover;
+  z-index: 2;
+  opacity: 0.5;
+}
